@@ -1,4 +1,5 @@
 ﻿using UseCaseAPI.DAL.Entities;
+using UseCaseAPI.Enums;
 
 namespace UseCaseAPI.BusinessLogic
 {
@@ -17,6 +18,24 @@ namespace UseCaseAPI.BusinessLogic
         public static List<Country> FilterByPopulation(this List<Country> countries, int population)
         {
             return countries.Where(x => x.Population < population * 1000000).ToList();
+        }
+
+        public static List<Country> Sort(this List<Country> countries, string sortDirection)
+        {
+            if (!Enum.TryParse(sortDirection, true, out SortDirection direction))
+            {
+                return countries;
+            }
+
+            switch (direction)
+            {
+                case SortDirection.Ascend:
+                    return countries.OrderBy(x => x.Name.Common).ToList();
+                case SortDirection.Descend:
+                    return countries.OrderByDescending(x => x.Name.Common).ToList();
+                default:
+                    return countries;
+            }
         }
     }
 }
