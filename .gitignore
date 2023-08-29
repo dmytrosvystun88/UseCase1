@@ -7,3 +7,5 @@
 /UseCaseAPI/obj
 /UseCaseAPI/.vs/UseCaseAPI/FileContentIndex
 /UseCaseAPI/.vs/UseCaseAPI
+/UseCaseAPI.Tests/bin/Debug/net6.0
+/UseCaseAPI.Tests/obj
