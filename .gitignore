@@ -9,3 +9,4 @@
 /UseCaseAPI/.vs/UseCaseAPI
 /UseCaseAPI.Tests/bin/Debug/net6.0
 /UseCaseAPI.Tests/obj
+/UseCaseAPI.Tests/bin/Release/net6.0/CoverletSourceRootsMapping
