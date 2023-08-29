@@ -18,7 +18,7 @@ public class CountriesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Country>> GetAsync([FromQuery] string name = null, [FromQuery] long? population = null, [FromQuery] string sortDirection = null, 
+    public async Task<IEnumerable<Country>> GetAsync([FromQuery] string name = null, [FromQuery] int? population = null, [FromQuery] string sortDirection = null, 
         [FromQuery] int? numberOfResults = null)
     {
         string countriesUrl = _configuration.GetValue<string>(Constants.CountriesUrlConfigName);
