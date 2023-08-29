@@ -22,6 +22,7 @@ Run the UseCaseAPI project, the default browser should be started automatically 
 ## Usage
 
 To make a request using swagger provide parameters such as name, population, sortDirection or numberOfResults for \Countries endpoint and hit "Execute" button.
-To call the endpoint programmatically send GET request: > https://localhost:{port}/Countries?name={name}&population={population}&sortDirection={ascend|descend}&numberOfResults={number} 
+To call the endpoint programmatically send GET request: 
+> https://localhost:{port}/Countries?name={name}&population={population}&sortDirection={ascend|descend}&numberOfResults={number} 
 
 
