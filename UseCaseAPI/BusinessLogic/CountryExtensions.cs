@@ -15,9 +15,11 @@ namespace UseCaseAPI.BusinessLogic
             return countries.Where(x => x.Name.Common.Contains(name, StringComparison.InvariantCultureIgnoreCase)).ToList();
         }
 
-        public static List<Country> FilterByPopulation(this List<Country> countries, int population)
+        public static List<Country> FilterByPopulation(this List<Country> countries, int? population)
         {
-            return countries.Where(x => x.Population < population * 1000000).ToList();
+            return population.HasValue ?
+                countries.Where(x => x.Population < population.Value * 1000000).ToList() :
+                countries;
         }
 
         public static List<Country> Sort(this List<Country> countries, string sortDirection)
@@ -38,9 +40,11 @@ namespace UseCaseAPI.BusinessLogic
             }
         }
 
-        public static List<Country> TakeOnly(this List<Country> countries, int numberOfResults)
+        public static List<Country> TakeOnly(this List<Country> countries, int? numberOfResults)
         {
-            return countries.Take(numberOfResults).ToList();
+            return numberOfResults.HasValue ?
+                countries.Take(numberOfResults.Value).ToList() :
+                countries;
         }
     }
 }

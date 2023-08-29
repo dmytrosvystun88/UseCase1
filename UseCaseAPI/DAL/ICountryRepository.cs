@@ -4,6 +4,6 @@ namespace UseCaseAPI.DAL
 {
     public interface ICountryRepository
     {
-        Task<IEnumerable<Country>> GetAllAsync(string countriesUrl);
+        Task<List<Country>> GetAllAsync(string countriesUrl);
     }
 }

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using UseCaseAPI.DAL;
+using UseCaseAPI.BusinessLogic;
 using UseCaseAPI.DAL.Entities;
 
 namespace UseCaseAPI.Controllers;
@@ -8,12 +8,12 @@ namespace UseCaseAPI.Controllers;
 [Route("[controller]")]
 public class CountriesController : ControllerBase
 {
-    private readonly ICountryRepository _countryRepository;
+    private readonly ICountryService _countryService;
     private readonly IConfiguration _configuration;
 
-    public CountriesController(ICountryRepository countryRepository, IConfiguration configuration)
+    public CountriesController(ICountryService countryService, IConfiguration configuration)
     {
-        _countryRepository = countryRepository;
+        _countryService = countryService;
         _configuration = configuration;
     }
 
@@ -27,6 +27,6 @@ public class CountriesController : ControllerBase
             return new List<Country>(); 
         }
 
-        return await _countryRepository.GetAllAsync(countriesUrl);
+        return await _countryService.GetAsync(name, population, sortDirection, numberOfResults, countriesUrl);
     }
 }

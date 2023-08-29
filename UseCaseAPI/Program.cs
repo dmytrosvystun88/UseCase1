@@ -1,3 +1,4 @@
+using UseCaseAPI.BusinessLogic;
 using UseCaseAPI.DAL;
 
 namespace UseCaseAPI;
@@ -16,6 +17,7 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+        builder.Services.AddScoped<ICountryService, CountryService>();
 
         var app = builder.Build();
 
