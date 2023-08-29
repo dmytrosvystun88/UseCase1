@@ -37,5 +37,10 @@ namespace UseCaseAPI.BusinessLogic
                     return countries;
             }
         }
+
+        public static List<Country> TakeOnly(this List<Country> countries, int numberOfResults)
+        {
+            return countries.Take(numberOfResults).ToList();
+        }
     }
 }
