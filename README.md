@@ -1,4 +1,4 @@
-# Use case #1 (https://github.com/dmytrosvystun88/UseCase1/actions/workflows/build.yml/badge.svg)
+# Use case #1 ![example workflow](https://github.com/dmytrosvystun88/UseCase1/actions/workflows/build.yml/badge.svg)
 
 ## General information
 
